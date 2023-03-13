@@ -1,6 +1,5 @@
 
 # Module Ten Challenge
-N/A
 
 ## Description
 

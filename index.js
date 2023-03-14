@@ -1,10 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const createHTML = require('./src/createHTML.js');
 
-const Employee = require("./lib/employee");
-const Engineer = require("./lib/engineer");
-const Intern = require("./lib/intern");
-const Manager = require("./lib/manager");
+const Engineer = require("./libs/Engineer.js");
+const Intern = require("./libs/Intern.js");
+const Manager = require("./libs/Manager.js");
 
 const employeeArr = [];
 
@@ -130,4 +130,31 @@ function addIntern () {
         });
     };
 
-    
+    const writeFile = data => {
+        fs.writeFile('./dist/myTeamProfile.html', data, err => {
+            if (err) {
+                console.log(err);
+                return;
+            } else {
+                console.log("Your team profile has been successfully created!")
+            }
+        })
+    }; 
+
+    function start() {
+        return new Promise((resolve, reject) => {
+          addManager();
+          resolve();
+        })
+      };
+
+      start()
+  .then(() => {
+    return createHTML(employeeArr);
+  })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .catch(err => {
+    console.log(err);
+  });

@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const createHTML = require('./src/createHTML.js');
+const generateTeamData = require('./src/createHTML.js');
 
 const Engineer = require("./libs/Engineer.js");
 const Intern = require("./libs/Intern.js");
@@ -24,7 +25,7 @@ function addEmployee() {
       } else if (val.employee === "Intern") {
         addIntern();
       } else {
-        generateTeamFile();
+        generateTeamData();
       }
     });
 }
@@ -118,14 +119,14 @@ function addIntern () {
             },
             {
                 type: 'input',
-                name: 'school',
+                name: 'school', 
                 message: "Please enter the intern's school: ",
             },
         ])
         .then((val) => {
-            const engineer = new Intern(val.name, val.id, val.email, val.school);
-            console.table(engineer);
-            employeeArr.push(engineer);
+            const intern = new Intern(val.name, val.id, val.email, val.school);
+            console.table(intern);
+            employeeArr.push(intern);
             addEmployee();
         });
     };
@@ -141,20 +142,4 @@ function addIntern () {
         })
     }; 
 
-    function start() {
-        return new Promise((resolve, reject) => {
-          addManager();
-          resolve();
-        })
-      };
-
-      start()
-  .then(() => {
-    return createHTML(employeeArr);
-  })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+addManager();

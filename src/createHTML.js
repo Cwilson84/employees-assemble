@@ -80,12 +80,12 @@ createHTML = (data) => {
     }
 
     const employeeCards = dataArray.join('')
-    const generateTeam = generateTeamdata(employeeCards); 
+    const generateTeam = generateTeamData(employeeCards); 
     return generateTeam;
 
 }
 
-const generateTeamPage = function (employeeCards) {   
+const generateTeamData = function (employeeCards) {   
   return`
   <!DOCTYPE html>
   <html lang="en">
@@ -116,3 +116,5 @@ const generateTeamPage = function (employeeCards) {
   </html>
 `;
 }
+module.exports = createHTML;
+module.exports = generateTeamData;

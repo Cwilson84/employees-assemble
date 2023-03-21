@@ -1,4 +1,4 @@
-const Manager = require ('../lib/Manager');
+const Manager = require ('../libs/Manager');
 
 describe('Manager', () => {
     it ('should create a manager object', () => {

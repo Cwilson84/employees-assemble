@@ -33,7 +33,8 @@ To run the tests for the application, simply type "npm test" into the command li
 ## Links
 
 Link to generated example - https://drive.google.com/file/d/1E9FXxdxy_OwbA5mjaeYrMvP2GLtopayD/view
-Link to sample HTML - ![Module 10 Screenshot](https://user-images.githubusercontent.com/120229536/233866809-85c9ede1-be92-4d2c-becc-633e99a589b5.png)
+
+Sample HTML - ![Module 10 Screenshot](https://user-images.githubusercontent.com/120229536/233866809-85c9ede1-be92-4d2c-becc-633e99a589b5.png)
 
 
 ## Credits

@@ -28,7 +28,7 @@ None at present
 
 ## Tests
 
-
+To run the tests for the application, simply type "npm test" into the command line. (Must have Node Package Manager installed)
 
 ## Links
 
